@@ -2,7 +2,7 @@
 
 A modern, real-time dashboard for AI agent orchestration built with Next.js and Supabase.# OmniAgent Dashboard  
 🚀 Triggered redeploy from Vercel
-
+✅ Deployment fix attempt
 
 ![OmniAgent Dashboard](https://via.placeholder.com/1200x600?text=OmniAgent+Dashboard)
 
