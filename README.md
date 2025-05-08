@@ -1,6 +1,7 @@
 # OmniAgent Dashboard
 
-A modern, real-timess dashboard for AI agent orchestration built with Next.js and Supabase.
+A modern, real-time dashboard for AI agent orchestration built with Next.js and Supabase.<!-- Trigger redeploy -->
+
 
 ![OmniAgent Dashboard](https://via.placeholder.com/1200x600?text=OmniAgent+Dashboard)
 
