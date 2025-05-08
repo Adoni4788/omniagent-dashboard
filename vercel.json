@@ -31,10 +31,5 @@
       ]
     }
   ],
-  "env": {
-    "NEXT_PUBLIC_SUPABASE_URL": "https://lryvtcgdprxvfoxtcvma.supabase.co",
-    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxyeXZ0Y2dkcHJ4dmZveHRjdm1hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY2NjY1MDQsImV4cCI6MjA2MjI0MjUwNH0.JeJf3fzoRwx_w3RwyfbSmBnPzSj9XhlDJzs6AZZOQG4",
-    "SUPABASE_SERVICE_ROLE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxyeXZ0Y2dkcHJ4dmZveHRjdm1hIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0NjY2NjUwNCwiZXhwIjoyMDYyMjQyNTA0fQ.nMweV6MRGWxWfaW2wuOQnoPsPlafOM5nprVZaSuHpeY",
-    "NEXT_PUBLIC_USE_MOCK_DATA": "false"
-  }
+  "env": {}
 }
