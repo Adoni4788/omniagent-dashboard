@@ -148,3 +148,4 @@ User preferences and settings.
 ## 📝 License
 
 [MIT](LICENSE) 
+<!-- Triggering redeploy -->
