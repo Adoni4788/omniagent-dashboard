@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Check if commit message follows conventional commits format
+# Format: <type>(<scope>): <subject>
+# Example: feat(auth): add login functionality
+
+MESSAGE=$(cat "$1")
+COMMIT_PATTERN="^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\(.+\))?: .{1,}"
+
+if ! [[ $MESSAGE =~ $COMMIT_PATTERN ]]; then
+  echo "🚫 Invalid commit message format."
+  echo "Commit message must match format: <type>(<scope>): <subject>"
+  echo "Examples: 'feat(auth): add login page' or 'fix: correct hydration issue'"
+  echo "Allowed types: feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert"
+  exit 1
+fi 
