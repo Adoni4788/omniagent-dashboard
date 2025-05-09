@@ -13,11 +13,12 @@ import {
   MonitorPlay,
   ShieldAlert,
 } from 'lucide-react'
-import { useAuth } from '@/lib/auth'
+import { useAuth } from '@/lib/auth-provider'
 
 interface SidebarNavProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-export function Sidebar({ className, ...props }: SidebarNavProps) {
+// Create the component function
+function SidebarComponent({ className, ...props }: SidebarNavProps) {
   const pathname = usePathname()
   const { isAdmin } = useAuth()
   
@@ -104,4 +105,11 @@ export function Sidebar({ className, ...props }: SidebarNavProps) {
       </ScrollArea>
     </div>
   )
-} 
+}
+
+// Export as both named export and default export
+export const Sidebar = SidebarComponent
+
+// Export as default with multiple names for backward compatibility
+const AppSidebar = SidebarComponent
+export default AppSidebar 

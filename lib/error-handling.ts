@@ -55,15 +55,32 @@ export function handleApiError(error: unknown): {
 } {
   // Already an AppError
   if (error instanceof AppError) {
-    const errorType = Object.values(ErrorTypes).includes(error.context?.type as any)
-      ? error.context?.type as ErrorType
-      : ErrorTypes.SERVER_ERROR
+    // Safely get a valid error type string that exists in ErrorTypes values
+    let errorTypeValue: string;
+    
+    if (error.context?.type && 
+        typeof error.context.type === 'string' && 
+        Object.values(ErrorTypes).includes(error.context.type as any)) {
+      errorTypeValue = error.context.type;
+    } else {
+      errorTypeValue = ErrorTypes.SERVER_ERROR;
+    }
+    
+    // Now safely access UserFriendlyErrors using the errorTypeValue
+    // Find matching key in ErrorTypes that has this value
+    const errorKey = Object.entries(ErrorTypes)
+      .find(([_, value]) => value === errorTypeValue)?.[0] as keyof typeof ErrorTypes | undefined;
+    
+    // Use the friendly message if we found a valid key, otherwise fall back to the error message
+    const friendlyMessage = errorKey 
+      ? UserFriendlyErrors[ErrorTypes[errorKey]] 
+      : UserFriendlyErrors[ErrorTypes.SERVER_ERROR];
 
     return { 
       message: error.message, 
       status: error.statusCode,
       type: error.isOperational ? 'operational' : 'programming',
-      friendlyMessage: UserFriendlyErrors[errorType] || error.message,
+      friendlyMessage: friendlyMessage || error.message,
     }
   }
   
