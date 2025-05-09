@@ -1,7 +1,7 @@
 {
   "version": 2,
   "buildCommand": "npm run build",
-  "installCommand": "npm install",
+  "installCommand": "npm install --legacy-peer-deps",
   "framework": "nextjs",
   "regions": ["iad1"],
   "headers": [
@@ -38,4 +38,5 @@
     "NEXT_PUBLIC_USE_MOCK_DATA": "false"
   }
 }
+
 
